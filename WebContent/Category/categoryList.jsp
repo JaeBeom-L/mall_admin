@@ -59,7 +59,7 @@
 						</div>
 							
 						<div class="card-body">
-							<a href="<%=request.getContextPath()%>/Category/insertCategoryForm.jsp"><button type="button" class="btn btn-outline-primary">카테고리 추가</button></a>							
+							<a href="<%=request.getContextPath()%>/Category/insertCategoryAction.jsp" data-toggle="modal" data-target="#insertCategoryModal"><button type="button" class="btn btn-outline-primary">카테고리 추가</button></a>							
 							<div class="table table-hover">	
 							<br>	
 								<table class="thead-light">
@@ -118,6 +118,30 @@
 		</div>
 	</div>
 	</div>
+	
+	<!-- category 추가 모달 폼 -->
+	 <form method="post" action="<%=request.getContextPath()%>/Category/insertCategoryAction.jsp">
+		 <div class="modal fade" id="insertCategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				 <div class="modal-content">
+					 <div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLabel">insertCategory</h5>
+						  	 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						       <span aria-hidden="true">×</span>
+							 </button>
+					</div>
+				<div class="modal-body">
+					<jsp:include page="/Category/insertCategoryForm.jsp"></jsp:include>
+				 </div>
+			 <div class="modal-footer">					                    
+			 <button type="submit" class="btn btn-primary">추가</button>
+		 	</div>
+		 		</div>
+		 	</div>
+		 </div>
+	</form>
+	
+	
 	
 	<!-- footer영역 -->
 	<div>

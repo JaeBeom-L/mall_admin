@@ -102,7 +102,7 @@
 								</select>
 								</div>
 								<button type="submit" class="btn btn-outline-primary">보기</button>&nbsp;
-								<a href="<%=request.getContextPath()%>/Notice/insertNoticeForm.jsp"><button type="button" class="btn btn-outline-primary">공지 추가</button></a>
+								<a href="<%=request.getContextPath()%>/Notice/insertNoticeForm.jsp" data-toggle="modal" data-target="#insertNoticeModal"><button type="button" class="btn btn-outline-primary">공지 추가</button></a>
 							</div>
 						</form>
 						<br>
@@ -207,6 +207,28 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- category 추가 모달 폼 -->
+	 <form method="post" action="<%=request.getContextPath()%>/Notice/insertNoticeAction.jsp">
+		 <div class="modal fade" id="insertNoticeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				 <div class="modal-content">
+					 <div class="modal-header">
+						  <h5 class="modal-title" id="exampleModalLabel">insertNotice</h5>
+						  	 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						       <span aria-hidden="true">×</span>
+							 </button>
+					</div>
+				<div class="modal-body">
+					<jsp:include page="/Notice/insertNoticeForm.jsp"></jsp:include>
+				 </div>
+			 <div class="modal-footer">					                    
+			 <button type="submit" class="btn btn-primary">추가</button>
+		 	</div>
+		 		</div>
+		 	</div>
+		 </div>
+	</form>
 	
 	<div>
 		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>

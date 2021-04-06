@@ -25,10 +25,10 @@
 	
 	Ebook ebook = new Ebook();
 	ebook.setCategoryName(categoryName);
-	ebook.setCategoryName(categoryName);
-	ebook.setCategoryName(categoryName);
-	ebook.setCategoryName(categoryName);
-	ebook.setCategoryName(categoryName);
+	ebook.setEbookAuthor(ebookAuthor);
+	ebook.setEbookCompany(ebookCompany);
+	ebook.setEbookISBN(ebookISBN);
+	ebook.setEbookPageCount(ebookPageCount);
 	ebook.setEbookPrice(ebookPrice);
 	EbookDao.updateEbook(ebook); //전체 수정 메서드 실행
 	

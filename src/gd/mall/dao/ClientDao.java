@@ -9,9 +9,9 @@ public class ClientDao {
 		Client c = null;
 		String sql ="SELECT client_no clientNo, client_email clientMail, client_pw clientPw, client_date clientDate FROM client WHERE client_no=?";
 		Connection conn = DBUtil.getConnection();
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		System.out.println(stmt); //디버깅코드
+		PreparedStatement stmt = conn.prepareStatement(sql);		
 		stmt.setInt(1, clientNo);
+		System.out.println(stmt+"고객정보출력"); //디버깅코드
 		ResultSet rs = stmt.executeQuery();
 		if(rs.next()) {
 			c = new Client();
@@ -27,10 +27,10 @@ public class ClientDao {
 	public static void updateClientList(String clientPw, int clientNo) throws Exception{
 		String sql = "UPDATE client SET client_pw=password(?) WHERE client_no=?";
 		Connection conn = DBUtil.getConnection();
-		PreparedStatement stmt = conn.prepareStatement(sql);
-		System.out.println(stmt); //디버깅코드
+		PreparedStatement stmt = conn.prepareStatement(sql);		
 		stmt.setString(1, clientPw);
 		stmt.setInt(2, clientNo);
+		System.out.println(stmt+"고객수정메서드"); //디버깅코드
 		stmt.executeUpdate();
 	}
 	

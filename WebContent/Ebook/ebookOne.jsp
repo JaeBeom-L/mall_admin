@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>clientList</title>
+    <title>ebookOne</title>
 
     <!-- Custom fonts for this template -->
     <link href="<%=request.getContextPath()%>/Bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -106,7 +106,7 @@
 									<td>ebookSummary</td>
 									<td><%=ebook.getEbookSummary()%></td>
 									<td>
-										<a href="<%=request.getContextPath()%>/Ebook/updateEbookSummaryForm.jsp?ebookISBN=<%=ebook.getEbookISBN()%>"><button class="btn btn-outline-primary">수정</button></a>
+										<a href="<%=request.getContextPath()%>/Ebook/updateEbookSummaryForm.jsp?ebookISBN=<%=ebook.getEbookISBN()%>" data-toggle="modal" data-target="#updateEbookSummaryModal"><button class="btn btn-outline-primary">수정</button></a>
 									</td>
 								</tr>
 								
@@ -130,13 +130,13 @@
 									<td>ebookState</td>
 									<td><%=ebook.getEbookState()%></td>
 									<td>
-										<a href="<%=request.getContextPath()%>/Ebook/updateEbookStateForm.jsp?ebookISBN=<%=ebook.getEbookISBN()%>" >
+										<a href="<%=request.getContextPath()%>/Ebook/updateEbookStateForm.jsp?ebookISBN=<%=ebook.getEbookISBN()%>"  data-toggle="modal" data-target="#updateEbookStateModal">
 											<button class="btn btn-outline-primary">수정</button>
 										</a>
 									</td>
 								</tr>
 							</table>
-							<a href="<%=request.getContextPath()%>/Ebook/updateEbookForm.jsp?ebookISBN=<%=ebook.getEbookISBN()%>"><button class="btn btn-outline-primary">정보 수정</button></a>
+							<a href="<%=request.getContextPath()%>/Ebook/updateEbookForm.jsp?ebookISBN=<%=ebook.getEbookISBN()%>" data-toggle="modal" data-target="#updateEbookModal"><button class="btn btn-outline-primary">정보 수정</button></a>
 							<a href="<%=request.getContextPath()%>/Ebook/deleteEbookAction.jsp?ebookISBN=<%=ebook.getEbookISBN()%>"><button class="btn btn-outline-primary">삭제</button></a>
 						</div>
 						</div>
@@ -145,8 +145,31 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- ebook 요약 수정 모달 폼 -->
+	 <form method="post" action="<%=request.getContextPath()%>/Ebook/updateEbookSummaryAction.jsp">
+		<div class="modal fade" id="updateEbookSummaryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						 <h5 class="modal-title" id="exampleModalLabel">updateSummary</h5>
+						 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						      <span aria-hidden="true">×</span>
+						  </button>
+		              </div>
+		             <div class="modal-body">
+						 <jsp:include page="/Ebook/updateEbookSummaryForm.jsp"></jsp:include>
+					 </div>
+					<div class="modal-footer">					                    
+						<button type="submit" class="btn btn-primary">수정</button>
+					 </div>
+				 </div>
+			</div>
+		 </div>
+	</form>
+	
 	<!-- ebook 이미지 수정 모달 폼 -->
-	 <form method="post" action="<%=request.getContextPath()%>/Ebook/updateEbookImgAction.jsp" enctype="multipart/form-data">
+	 <form method="post" action="<%=request.getContextPath()%>/Ebook/updateEbookImgAction.jsp"  enctype="multipart/form-data">
 		<div class="modal fade" id="updateEbookImgModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
@@ -166,6 +189,51 @@
 			</div>
 		 </div>
 	</form>				
+	
+	
+	<!-- ebook 상태 수정 모달 폼 -->
+	 <form method="post" action="<%=request.getContextPath()%>/Ebook/updateEbookStateAction.jsp">
+		<div class="modal fade" id="updateEbookStateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						 <h5 class="modal-title" id="exampleModalLabel">updateState</h5>
+						 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						      <span aria-hidden="true">×</span>
+						  </button>
+		              </div>
+		             <div class="modal-body">
+						 <jsp:include page="/Ebook/updateEbookStateForm.jsp"></jsp:include>
+					 </div>
+					<div class="modal-footer">					                    
+						<button type="submit" class="btn btn-primary">수정</button>
+					 </div>
+				 </div>
+			</div>
+		 </div>
+	</form>				
+	
+	<!-- ebook 전체 수정 모달 폼 -->
+	 <form method="post" action="<%=request.getContextPath()%>/Ebook/updateEbookAction.jsp">
+		<div class="modal fade" id="updateEbookModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						 <h5 class="modal-title" id="exampleModalLabel">updateEbook</h5>
+						 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+						      <span aria-hidden="true">×</span>
+						  </button>
+		              </div>
+		             <div class="modal-body">
+						 <jsp:include page="/Ebook/updateEbookForm.jsp"></jsp:include>
+					 </div>
+					<div class="modal-footer">					                    
+						<button type="submit" class="btn btn-primary">수정</button>
+					 </div>
+				 </div>
+			</div>
+		 </div>
+	</form>			
 	
 	<div>
 		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>

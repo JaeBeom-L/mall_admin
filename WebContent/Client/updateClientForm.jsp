@@ -18,10 +18,7 @@
 	int clientNo = Integer.parseInt(request.getParameter("clientNo")); // 수정버튼으로 고객이메일을 받아온다.
 	Client client = (Client)(ClientDao.clientInformation(clientNo));
 %>
-	<!-- adminMenu -->
-	<div>
-		<jsp:include page="/inc/adminMenu.jsp"></jsp:include>
-	</div>
+
 	<h1>고객 정보 수정</h1>
 	<form method="post" action="<%=request.getContextPath()%>/Client/updateClientAction.jsp">
 		<table border="1">
