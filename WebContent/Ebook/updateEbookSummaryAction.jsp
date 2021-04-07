@@ -20,5 +20,5 @@
 	ebook.setEbookSummary(ebookSummary);
 	EbookDao.updateEbookSummary(ebook); // 요약 수정 메서드 실행
 	
-	response.sendRedirect(request.getContextPath()+"/Ebook/ebookOne.jsp?ebookISBN="+ebookISBN);
+	response.sendRedirect(request.getContextPath()+"/Ebook/ebookOne.jsp?ebookISBN="+ebookISBN); // 책 요약 수정한 책 정보를 다시 출력
 %>

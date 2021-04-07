@@ -18,7 +18,7 @@
 	ebook.setEbookISBN(ebookISBN);
 	ebook.setEbookState(ebookState);
 	
-	EbookDao.updateEbookState(ebook);
+	EbookDao.updateEbookState(ebook); // 책 상태 수정 메서드 실행
 	response.sendRedirect(request.getContextPath()+"/Ebook/ebookOne.jsp?ebookISBN="+ebookISBN); // 작업 완료후 ISBN에 맞는 ebookOne페이지로 돌아간다.
 
 %>

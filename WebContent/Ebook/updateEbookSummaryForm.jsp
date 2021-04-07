@@ -10,11 +10,11 @@
 		return;
 	}
 	Ebook ebook = new Ebook();
-	ebook = EbookDao.selectEbookOne(ebookISBN);
+	ebook = EbookDao.selectEbookOne(ebookISBN); // ebookISBN에 맞는 책정보 가져오기
 	
 %>
 <!-- adminMenu -->
 
-		<input type="hidden" name="ebookISBN" value="<%=ebook.getEbookISBN()%>">
-		<textarea rows="20" cols="50" name="ebookSummary" class="form-control"></textarea>
+	<input type="hidden" name="ebookISBN" value="<%=ebook.getEbookISBN()%>">
+	<textarea rows="20" cols="50" name="ebookSummary" class="form-control"></textarea>
 

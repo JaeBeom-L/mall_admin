@@ -29,7 +29,7 @@
 	ebook.setEbookPrice(ebookPrice);
 	ebook.setEbookSummary(ebookSummary);
 		
-	int result = EbookDao.checkISBN(ebookISBN);
+	int result = EbookDao.checkISBN(ebookISBN); // 책 정보를 넣는데 성공하면 1을 반환
 	if( result == 1) { //중복체크 중복이면 다시 리스트로
 		System.out.println("중복입니다.");
 		response.sendRedirect(request.getContextPath()+"/Ebook/ebookList.jsp");

@@ -25,5 +25,5 @@
 	ebook.setEbookImg(ebookImg);
 	EbookDao.updateEbookImg(ebook);
 	
-	response.sendRedirect(request.getContextPath()+"/Ebook/ebookOne.jsp?ebookISBN="+ebookISBN);
+	response.sendRedirect(request.getContextPath()+"/Ebook/ebookOne.jsp?ebookISBN="+ebookISBN); // 이미지 수정후 수정한 정보로 다시 출력
 %>

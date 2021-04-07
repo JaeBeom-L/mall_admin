@@ -13,13 +13,13 @@
 	ebook = EbookDao.selectEbookOne(ebookISBN);
 	
 %>
-		<input type="hidden" name="ebookISBN" value="<%=ebookISBN%>">
-		<label>책 상태</label>
-		<select name="ebookState" class="custom-select">
-			<option>선택</option>
-			<option value="판매중">판매중</option>
-			<option value="품절">품절</option>
-			<option value="절판">절판</option>
-			<option value="구편절판">구편절판</option>
-		</select>
+	<input type="hidden" name="ebookISBN" value="<%=ebookISBN%>">
+	<label>책 상태</label>
+	<select name="ebookState" class="custom-select">
+		<option>선택</option>
+		<option value="판매중">판매중</option>
+		<option value="품절">품절</option>
+		<option value="절판">절판</option>
+		<option value="구편절판">구편절판</option>
+	</select>
 
