@@ -8,13 +8,11 @@
 		return;
 	}
 %>
-
-
-		<table class="table-hover">			
-			<tr>
-				<td>categoryName</td>		
-				<td>
-					<input type="text" name="categoryName" class="form-control">
-				</td>				
-			</tr>												
-		</table>
+	<table class="table-hover">			
+		<tr>
+			<td>categoryName</td>		
+			<td>
+				<input type="text" name="categoryName" class="form-control">
+			</td>				
+		</tr>												
+	</table>

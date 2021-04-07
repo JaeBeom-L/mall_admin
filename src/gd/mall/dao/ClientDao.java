@@ -6,7 +6,7 @@ import java.sql.*;
 public class ClientDao {
 	// 고객 정보 출력 메서드
 	public static Client clientInformation(int clientNo) throws Exception{
-		Client c = null;
+		Client c = new Client();
 		String sql ="SELECT client_no clientNo, client_email clientMail, client_pw clientPw, client_date clientDate FROM client WHERE client_no=?";
 		Connection conn = DBUtil.getConnection();
 		PreparedStatement stmt = conn.prepareStatement(sql);		
@@ -14,7 +14,6 @@ public class ClientDao {
 		System.out.println(stmt+"고객정보출력"); //디버깅코드
 		ResultSet rs = stmt.executeQuery();
 		if(rs.next()) {
-			c = new Client();
 			c.setClientNo(rs.getInt("clientNo"));
 			c.setClientPw(rs.getString("clientPw"));
 			c.setClientEmail(rs.getString("clientMail"));

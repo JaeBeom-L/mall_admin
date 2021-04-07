@@ -137,7 +137,10 @@
 						<div class="card shadow mb-4">
 							<div class="col mr-2">	
 							<br>
-								<h2 class="h3 mb-0 text-gray-800">noticeList&nbsp;<a href="<%=request.getContextPath()%>/Notice/noticeList.jsp">more</a></h2>
+								<div class="row" >
+									<div class="col-md-9"><h2 class="h3 mb-0 text-gray-800">&nbsp;noticeList</h2></div>
+									<div class="col-md-3"><h4><a href="<%=request.getContextPath()%>/Notice/noticeList.jsp">more</a></h4></div>
+								</div>
 								<table class="table table-bordered">				
 									<%
 										for(Notice n : noticeList){
@@ -159,7 +162,10 @@
 						<div class="card shadow mb-4">
 							<div class="col mr-2">
 							<br>
-								<h2 class="h3 mb-0 text-gray-800">managerList&nbsp;<a href="<%=request.getContextPath()%>/Manager/managerList.jsp">more</a></h2>
+								<div class="row" >
+									<div class="col-md-9"><h2 class="h3 mb-0 text-gray-800">&nbsp;managerList</h2></div>
+									<div class="col-md-3"><h4><a href="<%=request.getContextPath()%>/Manager/managerList.jsp">more</a></h4></div>
+								</div>
 								<table class="table table-bordered">				
 									<%
 										for(Manager m : managerList){
@@ -180,7 +186,10 @@
 						<div class="card shadow mb-6">
 							<div class="col mr-2">
 							<br>
-								<h2 class="h3 mb-0 text-gray-800">ClientList&nbsp;<a href="<%=request.getContextPath()%>/Client/clientList.jsp">more</a></h2>
+								<div class="row" >
+									<div class="col-md-10"><h2 class="h3 mb-0 text-gray-800">&nbsp;clientList</h2></div>
+									<div class="col-md-2"><h4><a href="<%=request.getContextPath()%>/Client/clientList.jsp">more</a></h4></div>
+								</div>
 								<table class="table table-bordered">				
 									<%
 										for(Client c : clientList){
@@ -201,12 +210,15 @@
 				<!-- Second Row -->
 	            <div class="row">
 					<!-- 최근 등록한 책 5권 -->				
-					<div>						
-						<div class="col-xl-12 col-md-6 mb-6">	
+											
+						<div class="col-xl-4 col-md-6 mb-4">	
 							<div class="card shadow mb-6">
 								<div class="col mr-2">
 								<br>
-									<h2 class="h3 mb-0 text-gray-800">ebookList&nbsp;<a href="<%=request.getContextPath()%>/Ebook/ebookList.jsp">more</a></h2>
+									<div class="row" >
+										<div class="col-md-10"><h2 class="h3 mb-0 text-gray-800">&nbsp;ebookList</h2></div>
+										<div class="col-md-2"><h4><a href="<%=request.getContextPath()%>/Ebook/ebookList.jsp">more</a></h4></div>
+									</div>
 									<table class="table table-bordered">				
 										<%
 											for(Ebook e : ebookList){
@@ -222,15 +234,18 @@
 								</div>	
 							</div>
 						</div>
-					</div>
+					
 					
 					<!-- 최근 주문 5개 -->
-					<div>						
-						<div class="col-xl-12 col-md-6 mb-4">		
-							<div class="card shadow mb-4">	
+											
+						<div class="col-xl-8 col-md-6 mb-4">		
+							<div class="card shadow mb-6">	
 								<div class="col mr-2">
 								<br>
-								<h2 class="h3 mb-0 text-gray-800">ordersList&nbsp;<a href="<%=request.getContextPath()%>/Orders/ordersList.jsp">more</a></h2>
+									<div class="row" >
+										<div class="col-md-11"><h2 class="h3 mb-0 text-gray-800">&nbsp;ordersList</h2></div>
+										<div class="col-md-1"><h4><a href="<%=request.getContextPath()%>/Orders/ordersList.jsp">more</a></h4></div>
+									</div>
 									<table class="table table-bordered">				
 										<%
 											
@@ -248,7 +263,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -258,7 +273,7 @@
 	}
 %>
 	<div>
-		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>
+		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>
 </body>
 </html>

@@ -124,30 +124,36 @@
 						</div>
 						
 						<div class="card shadow mb-4">
-						<!-- 댓글 리스트 -->
-							<table class="table table-hover-light">
-						<%
-							ArrayList<Comment> commentList = CommentDao.commentList(noticeNo);
-							for(Comment c : commentList){
-						%>			
-								<tr>
-									<td><%=c.getCommentContent()%></td>
-									<td><%=c.getCommentDate()%></td>
-									<td><%=c.getManagerId()%></td>
-									<td><a href="<%=request.getContextPath()%>/Notice/deleteCommentAction.jsp?commentNo=<%=c.getCommentNo()%>&noticeNo=<%=noticeNo%>&managerId=<%=manager.getManagerId()%>"><button class="btn btn-outline-primary">삭제</button></a></td>
-								</tr>
-								
-						<%
-							}
-						%>
-							</table>
-						</div>					
+              				<div class="card-header py-3">
+								<h6 class="m-0 font-weight-bold text-primary">댓글</h6>
+							</div>
+							<div class="card shadow mb-4">
+							<!-- 댓글 리스트 -->
+								<table class="table table-hover-light">
+								<%
+									ArrayList<Comment> commentList = CommentDao.commentList(noticeNo);
+									for(Comment c : commentList){
+								%>			
+										<tr>
+											<td><%=c.getCommentContent()%></td>
+											<td><%=c.getCommentDate()%></td>
+											<td><%=c.getManagerId()%></td>
+											<td><a href="<%=request.getContextPath()%>/Notice/deleteCommentAction.jsp?commentNo=<%=c.getCommentNo()%>&noticeNo=<%=noticeNo%>&managerId=<%=manager.getManagerId()%>"><button class="btn btn-outline-primary">삭제</button></a></td>
+										</tr>
+										
+								<%
+									}
+								%>
+								</table>
+							</div>
+						</div>
+										
 				</div>
 			</div>
 		</div>
 	</div>
 	<div>
-		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>
+		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>
 </body>
 </html>

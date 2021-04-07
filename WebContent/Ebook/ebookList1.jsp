@@ -256,7 +256,7 @@
 	</div>
 </div>
 	<div>
-		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>
+		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>	
 	
 	

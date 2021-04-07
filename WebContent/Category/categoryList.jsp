@@ -15,10 +15,8 @@
 
     <!-- Custom fonts for this template -->
     <link href="<%=request.getContextPath()%>/Bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/Bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -46,7 +44,7 @@
 
   		 <!-- Main Content -->
       	 <div id="content">
-			<jsp:include page="/inc/adminTopBar.jsp"></jsp:include>
+			<jsp:include page="/inc/adminTopBar.jsp"></jsp:include><!-- 검색창과 로그아웃 상단bar -->
 			
 			<!-- Begin Page Content -->
             <div class="container-fluid">
@@ -127,12 +125,12 @@
 					 <div class="modal-header">
 						  <h5 class="modal-title" id="exampleModalLabel">insertCategory</h5>
 						  	 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-						       <span aria-hidden="true">×</span>
+						    	<span aria-hidden="true">×</span>
 							 </button>
 					</div>
-				<div class="modal-body">
+				<div class="modal-body"><!-- 카테고리 추가 폼을 모달로 불러온다 -->
 					<jsp:include page="/Category/insertCategoryForm.jsp"></jsp:include>
-				 </div>
+				</div>
 			 <div class="modal-footer">					                    
 			 <button type="submit" class="btn btn-primary">추가</button>
 		 	</div>
@@ -145,7 +143,7 @@
 	
 	<!-- footer영역 -->
 	<div>
-		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>
+		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>
 					
 						

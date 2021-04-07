@@ -29,17 +29,17 @@
 <%
 	Manager manager = (Manager)session.getAttribute("sessionManager"); // 매니저가 아니거나 레벨이 맞지 않으면 인덱스화면으로 돌아간다.
 	if(manager == null){
-		response.sendRedirect(request.getContextPath()+"adminIndex.jsp");
+		response.sendRedirect(request.getContextPath()+"/adminIndex.jsp");
 		return;	
 	}else if(manager.getManagerLevel()<2){										// 매니저 등급을 조정하여 레벨에 맞지 않는 사람을 차단 할 수 있다.
-		response.sendRedirect(request.getContextPath()+"adminIndex.jsp");
+		response.sendRedirect(request.getContextPath()+"/adminIndex.jsp");
 		return;	
 	}
 	
 	//현재 페이지
 	int currentPage = 1;
-	if(request.getParameter("beginRow") != null){
-		currentPage = Integer.parseInt(request.getParameter("beginRow"));
+	if(request.getParameter("currentPage") != null){
+		currentPage = Integer.parseInt(request.getParameter("currentPage"));
 	}
 	
 	// 한 페이지당 게시물 수
@@ -245,7 +245,7 @@
 </div>
 	
 	<div>
-		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>
+		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>
 </body>
 </html>

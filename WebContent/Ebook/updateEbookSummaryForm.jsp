@@ -16,5 +16,5 @@
 <!-- adminMenu -->
 
 		<input type="hidden" name="ebookISBN" value="<%=ebook.getEbookISBN()%>">
-		<textarea rows="5" cols="50" name="ebookSummary" class="form-control"></textarea>
+		<textarea rows="20" cols="50" name="ebookSummary" class="form-control"></textarea>
 

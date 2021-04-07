@@ -4,50 +4,7 @@ import gd.mall.util.*;
 import java.util.*;
 import java.sql.*;
 
-public class EbookDao {
-	//검색 메서드 구현
-	public static ArrayList<Ebook> searchList(int beginRow, int rowPerPage, String searchCategory, String searchWord) throws Exception{
-		ArrayList<Ebook> searchList = new ArrayList<>();		
-		PreparedStatement stmt = null;
-		if(searchCategory.equals("")) {
-			String sql = "SELECT category_name categoryName, ebook_isbn ebookISBN, ebook_title ebookTitle, ebook_author ebookAuthor, substr(ebook_date,1,10) ebookDate, ebook_price ebookPrice FROM ebook ORDER BY ebook_date DESC limit ?,?";
-			Connection conn = DBUtil.getConnection();
-			stmt = conn.prepareStatement(sql);		
-			stmt.setInt(1, beginRow);
-			stmt.setInt(2, rowPerPage);
-			System.out.println(stmt+" 검색 리스트"); //디버깅 코드
-		}else if(searchCategory.equals("ebook_isbn")) {
-			String sql = "SELECT category_name categoryName, ebook_isbn ebookISBN, ebook_title ebookTitle, ebook_author ebookAuthor, substr(ebook_date,1,10) ebookDate, ebook_price ebookPrice FROM ebook WHERE ebook_isbn Like ? ORDER BY ebook_date DESC limit ?,?";
-			Connection conn = DBUtil.getConnection();
-			stmt = conn.prepareStatement(sql);		
-			stmt.setString(1, "%"+searchWord+"%");
-			stmt.setInt(2, beginRow);
-			stmt.setInt(3, rowPerPage);
-			System.out.println(stmt+" 검색 리스트"); //디버깅 코드
-		}else if(searchCategory.equals("ebook_title")) {
-			String sql = "SELECT category_name categoryName, ebook_isbn ebookISBN, ebook_title ebookTitle, ebook_author ebookAuthor, substr(ebook_date,1,10) ebookDate, ebook_price ebookPrice FROM ebook WHERE ebook_title Like ? ORDER BY ebook_date DESC limit ?,?";
-			Connection conn = DBUtil.getConnection();
-			stmt = conn.prepareStatement(sql);
-			stmt.setString(1, "%"+searchWord+"%");
-			stmt.setInt(2, beginRow);
-			stmt.setInt(3, rowPerPage);
-		}
-		
-		ResultSet rs = stmt.executeQuery();
-		while(rs.next()) {
-			Ebook e = new Ebook();
-			e.setCategoryName(rs.getString("categoryName"));
-			e.setEbookISBN(rs.getString("ebookISBN"));
-			e.setEbookTitle(rs.getString("ebookTitle"));
-			e.setEbookAuthor(rs.getString("ebookAuthor"));
-			e.setEbookDate(rs.getString("ebookDate"));
-			e.setEbookPrice(rs.getInt("ebookPrice"));
-			searchList.add(e);
-		}
-		System.out.println(searchList.size());
-		return searchList;
-	}
-	
+public class EbookDao {	
 	// 전체 수정 메서드
 	public static void updateEbook(Ebook ebook) throws Exception{
 		//sql

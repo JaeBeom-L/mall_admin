@@ -112,7 +112,7 @@
 								
 								<tr><!-- 책 사진 -->
 									<td>ebookImg</td>
-									<td><img src="<%=request.getContextPath() %>/img/<%=ebook.getEbookImg()%>"></td>
+									<td><img src="<%=request.getContextPath() %>/img/<%=ebook.getEbookImg()%>" height="280" width="180"></td>
 									<td>
 										<a href="<%=request.getContextPath()%>/Ebook/updateEbookImgAction.jsp?ebookISBN=<%=ebook.getEbookISBN()%>" data-toggle="modal" data-target="#updateEbookImgModal">
 											<button class="btn btn-outline-primary">수정</button>
@@ -236,7 +236,7 @@
 	</form>			
 	
 	<div>
-		<jsp:include page="/inc/adminFotter.jsp"></jsp:include>
+		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>
 	
 	

@@ -12,7 +12,7 @@
 	}
 %>
 
-	<!-- Sidebar -->
+		<!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
@@ -25,29 +25,28 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="<%=request.getContextPath()%>/Manager/managerList.jsp">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>운영자 관리</span></a>
+               	<i class="fas fa-fw fa-tachometer-alt"></i>
+              	<span>운영자 관리</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%=request.getContextPath()%>/Client/clientList.jsp">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>고객관리</span>
+               	<i class="fas fa-fw fa-cog"></i>
+               	<span>고객관리</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="<%=request.getContextPath()%>/Category/categoryList.jsp">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>상품 카테고리 관리</span>
+               	<i class="fas fa-fw fa-wrench"></i>
+               	<span>상품 카테고리 관리</span>
                 </a>
             </li>
 
            <li class="nav-item">
-                <a class="nav-link collapsed" href="<%=request.getContextPath()%>/Ebook/ebookList.jsp" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>ebook 관리</span>
+                <a class="nav-link collapsed" href="<%=request.getContextPath()%>/Ebook/ebookList.jsp" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+               	<i class="fas fa-fw fa-folder"></i>
+               	<span>ebook 관리</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">           
@@ -66,14 +65,14 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="<%=request.getContextPath()%>/Orders/ordersList.jsp">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>주문관리</span></a>
+              	<i class="fas fa-fw fa-chart-area"></i>
+              	<span>주문관리</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="<%=request.getContextPath()%>/Notice/noticeList.jsp">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>공지관리</span></a>
+              	<i class="fas fa-fw fa-table"></i>
+           		<span>공지관리</span></a>
             </li>
 
             <!-- Divider -->
