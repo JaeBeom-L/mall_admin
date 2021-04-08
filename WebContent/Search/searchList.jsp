@@ -15,9 +15,7 @@
 
     <!-- Custom fonts for this template -->
     <link href="<%=request.getContextPath()%>/Bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/Bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
@@ -133,7 +131,7 @@
 						<br>
                        	<div class="table-responsive">
 						<%
-							if(searchList.equals("clientList")){
+							if(searchList.equals("clientList")){ // 검색하려는 정보가 고객정보 일 때 출력
 						%>
 								<table class="table table-hover">
 								<thead class="thead-light">
@@ -167,7 +165,7 @@
 								</table>
 						
 						<%
-							}else if(searchList.equals("ebookList")){
+							}else if(searchList.equals("ebookList")){ //검색하려는 결과가 ebook일 때
 						%>
 								<table class="table table-hover">
 								<thead class="thead-light">
@@ -200,7 +198,7 @@
 									</tbody>
 								</table>
 						<%	
-							}else if(searchList.equals("ordersList")){
+							}else if(searchList.equals("ordersList")){ // 검색하려는 결과가 주문정보 일 때 출력
 						%>
 								<table class="table table-hover">
 								<thead class="thead-light">
@@ -306,15 +304,15 @@
 								<%		
 									}
 								%>
-								
+									
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-	
+	<!-- footer 영역 -->
 	<div>
 		<jsp:include page="/inc/adminFooter.jsp"></jsp:include>
 	</div>

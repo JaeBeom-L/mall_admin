@@ -13,5 +13,5 @@
 	
 	System.out.println(ordersNo+"주문취소 액션 주문번호");
 	OrdersDao.updateOrdersState(ordersNo);//주문 취소 메서드 실행
-	response.sendRedirect(request.getContextPath()+"/Orders/ordersList.jsp");
+	response.sendRedirect(request.getContextPath()+"/Orders/ordersList.jsp");  // 작업 수행 후 주문리스트 출력
 %>

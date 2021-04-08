@@ -9,11 +9,11 @@
 	System.out.println(managerPw+"<-- param managerPw");
 	
 	// 2. 처리
-	Manager manager = ManagerDao.login(managerId,managerPw);
+	Manager manager = ManagerDao.login(managerId,managerPw); // managerLogin메서드 사용
 	if(manager !=null){
 		System.out.println("로그인 성공");
 		session.setAttribute("sessionManager", manager);
 	}
 	// 3. 출력 or 재요청(redirect)
-	response.sendRedirect(request.getContextPath()+"/adminIndex.jsp");
+	response.sendRedirect(request.getContextPath()+"/adminIndex.jsp"); // 로그인 후 다시 index page를 출력
 %>

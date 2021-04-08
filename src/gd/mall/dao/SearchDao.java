@@ -15,15 +15,16 @@ public class SearchDao {
 	// 총 게시물 수
 	public static int totalRow(String searchList, String searchWord) throws Exception{
 		int totalRow = 0;
-		PreparedStatement stmt = null;
-		//sql
+		PreparedStatement stmt = null;		
 		if(searchList.equals("clientList")) {
+			//sql
 			String sql = "SELECT COUNT(*) FROM client WHERE client_email LIKE ?";
 			//db연결
 			Connection conn = DBUtil.getConnection();
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, "%"+searchWord+"%");
 		}else if(searchList.equals("ebookList")) {
+			//sql
 			String sql = "SELECT COUNT(*) FROM ebook WHERE ebook_isbn Like ? or ebook_title Like ?";
 			//db연결
 			Connection conn = DBUtil.getConnection();
@@ -31,6 +32,7 @@ public class SearchDao {
 			stmt.setString(1, "%"+searchWord+"%");
 			stmt.setString(2, "%"+searchWord+"%");
 		}else if(searchList.equals("ordersList")) {
+			//sql
 			String sql = "SELECT COUNT(*) FROM orders o INNER JOIN ebook e INNER JOIN client c ON o.ebook_no = e.ebook_no AND o.client_no=c.client_no WHERE c.client_email LIKE ?";
 			//db연결
 			Connection conn = DBUtil.getConnection();
@@ -46,12 +48,12 @@ public class SearchDao {
 		return totalRow;
 	}
 	
-	//검색 메서드 구현
+	//검색 메서드 구현 
 	public static ArrayList<OrdersAndEbookAndClient> searchList(int beginRow, int rowPerPage, String searchList, String searchWord) throws Exception{
 		ArrayList<OrdersAndEbookAndClient> list = new ArrayList<>();		
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		if(searchList.equals("clientList")) {
+		if(searchList.equals("clientList")) { // 고객정보를 검사하려 할 때 db에서 추출할 data
 			String sql = "SELECT client_email clientMail, substr(client_date, 1, 10) clientDate, client_no clientNo, client_pw clientPw FROM client WHERE client_email LIKE ?  ORDER BY client_date DESC limit ?,?";
 			Connection conn = DBUtil.getConnection();
 			stmt = conn.prepareStatement(sql);		
@@ -72,7 +74,7 @@ public class SearchDao {
 				
 				list.add(oec);
 			}
-		}else if(searchList.equals("ebookList")) {
+		}else if(searchList.equals("ebookList")) { // 책 정보를 검사하려 할 때 db에서 추출할 data
 			String sql = "SELECT ebook_no ebookNo, category_name categoryName, ebook_isbn ebookISBN, ebook_title ebookTitle, ebook_author ebookAuthor, substr(ebook_date,1,10) ebookDate, ebook_price ebookPrice, ebook_company ebookCompany FROM ebook WHERE ebook_isbn Like ? or ebook_title Like ? ORDER BY ebook_date DESC limit ?,?";
 			Connection conn = DBUtil.getConnection();
 			stmt = conn.prepareStatement(sql);		
@@ -98,8 +100,8 @@ public class SearchDao {
 				
 				list.add(oec);
 			}
-		}else if(searchList.equals("ordersList")) {
-			String sql = "SELECT o.orders_no ordersNo, o.ebook_no ebookNo,o.client_no clientNo,o.orders_date ordersDate,o.orders_state ordersState,e.ebook_isbn ebookISBN, e.ebook_title ebookTitle, e.ebook_author ebookAuthor, e.category_name categoryName, e.ebook_company ebookCompany, e.ebook_date ebookDate, e.ebook_no ebookNo, e.ebook_price ebookPrice, c.client_email clientEmail FROM orders o INNER JOIN ebook e INNER JOIN client c ON o.ebook_no = e.ebook_no AND o.client_no=c.client_no WHERE c.client_email LIKE ? order by o.orders_date desc limit ?,?";
+		}else if(searchList.equals("ordersList")) {// 주문정보를 검사하려 할 때 db에서 추출할 data
+			String sql = "SELECT o.orders_no ordersNo, o.ebook_no ebookNo,o.client_no clientNo,o.orders_date ordersDate,o.orders_state ordersState, e.ebook_title ebookTitle, c.client_email clientEmail FROM orders o INNER JOIN ebook e INNER JOIN client c ON o.ebook_no = e.ebook_no AND o.client_no=c.client_no WHERE c.client_email LIKE ? order by o.orders_date desc limit ?,?";
 			Connection conn = DBUtil.getConnection();
 			stmt = conn.prepareStatement(sql);
 			stmt.setString(1, "%"+searchWord+"%");
@@ -119,14 +121,7 @@ public class SearchDao {
 				oec.setOrders(o);
 				
 				Ebook e = new Ebook();
-				e.setEbookTitle(rs.getString("ebookTitle"));
-				e.setEbookISBN(rs.getString("ebookISBN"));
-				e.setEbookAuthor(rs.getString("ebookAuthor"));
-				e.setCategoryName(rs.getString("CategoryName"));
-				e.setEbookCompany(rs.getString("ebookCompany"));
-				e.setEbookDate(rs.getString("ebookDate"));
-				e.setEbookNo(rs.getInt("ebookNo"));
-				e.setEbookPrice(rs.getInt("ebookPrice"));
+				e.setEbookTitle(rs.getString("ebookTitle"));				
 				oec.setEbook(e);
 				
 				Client c = new Client();

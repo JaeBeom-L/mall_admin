@@ -12,7 +12,7 @@
 		return;
 	}
 	
-	request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8"); //파라미터를 받아 올 때 인코딩 형식을 UTF-8로 설정
 	Notice notice = new Notice();
 	notice.setNoticeNo(Integer.parseInt(request.getParameter("noticeNo")));
 	notice.setNoticeTitle(request.getParameter("noticeTitle"));
@@ -23,7 +23,7 @@
 	System.out.println(notice.getNoticeTitle()+"수정");
 	System.out.println(notice.getNoticeContent()+"수정");
 	
-	NoticeDao.updateNotice(notice);
-	response.sendRedirect(request.getContextPath()+"/Notice/noticeOne.jsp?noticeNo="+notice.getNoticeNo());
+	NoticeDao.updateNotice(notice); // 공지수정 메서드 실행
+	response.sendRedirect(request.getContextPath()+"/Notice/noticeOne.jsp?noticeNo="+notice.getNoticeNo()); // 공지 수정 후 해당 공지 다시 출력
 
 %>

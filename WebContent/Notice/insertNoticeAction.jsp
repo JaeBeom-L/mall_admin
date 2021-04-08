@@ -11,7 +11,7 @@
 		System.out.println("권한이 없습니다.");
 		return;
 	}
-	request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8"); //파라미터를 받아 올 떄 인코딩을 UTF-8로 설정
 	
 	Notice notice = new Notice();
 	notice.setNoticeTitle(request.getParameter("noticeTitle"));
@@ -24,5 +24,5 @@
 	System.out.println(notice.getManagerId()+"관리자아이디");
 	
 	NoticeDao.insertNotice(notice); // 공지 입력 메서드 실행
-	response.sendRedirect(request.getContextPath()+"/Notice/noticeList.jsp");
+	response.sendRedirect(request.getContextPath()+"/Notice/noticeList.jsp"); // 작업 수행 후 notcieList 페이지 출력
 %>

@@ -13,9 +13,7 @@
     <title>insertManagerForm</title>
 
  	<link href="<%=request.getContextPath()%>/Bootstrap/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<%=request.getContextPath()%>/Bootstrap/css/sb-admin-2.min.css" rel="stylesheet">
@@ -39,6 +37,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
+                            <!-- 매니저 등록 폼 -->
                             <form class="user" action = "<%=request.getContextPath()%>/Manager/insertManagerAction.jsp" method="post">
                                 <div class="form-group">
                                     <input type="text" class="form-control form-control-user" name="managerId"
@@ -57,9 +56,7 @@
                                
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
-                                </button>
-                               
-                               
+                                </button>                             
                             </form>
                             <hr>
                            	<div class="text-center">

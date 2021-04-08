@@ -25,5 +25,5 @@
 		response.sendRedirect(request.getContextPath()+"/Notice/noticeOne.jsp?noticeNo="+noticeNo);
 	}
 	
-	response.sendRedirect(request.getContextPath()+"/Notice/noticeOne.jsp?noticeNo="+noticeNo);
+	response.sendRedirect(request.getContextPath()+"/Notice/noticeOne.jsp?noticeNo="+noticeNo); // 댓글 삭제 후 다시 공지 출력
 %>

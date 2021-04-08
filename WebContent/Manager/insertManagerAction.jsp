@@ -10,7 +10,7 @@
 <body>
 
 <%
-	request.setCharacterEncoding("UFT-8");
+	request.setCharacterEncoding("UFT-8"); //파라미터를 받아 올 때 인코딩 UTF-8로 받아온다.
 	//1. 수정
 	String managerId = request.getParameter("managerId");
 	String managerPw = request.getParameter("managerPw");
