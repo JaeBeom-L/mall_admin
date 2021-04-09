@@ -207,8 +207,7 @@
 				
 				<!-- Second Row -->
 	            <div class="row">
-					<!-- 최근 등록한 책 5권 -->				
-											
+					<!-- 최근 등록한 책 5권 -->															
 						<div class="col-xl-4 col-md-6 mb-4">	
 							<div class="card shadow mb-6">
 								<div class="col mr-2">
@@ -232,10 +231,8 @@
 								</div>	
 							</div>
 						</div>
-					
-					
-					<!-- 최근 주문 5개 -->
-											
+										
+					<!-- 최근 주문 5개 -->											
 						<div class="col-xl-8 col-md-6 mb-4">		
 							<div class="card shadow mb-6">	
 								<div class="col mr-2">
@@ -260,11 +257,10 @@
 									</table>
 								</div>
 							</div>
-						</div>
-					
+						</div>					
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 		</div>
 <%		

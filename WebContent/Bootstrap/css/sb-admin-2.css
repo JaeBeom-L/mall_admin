@@ -10151,7 +10151,7 @@ a:focus {
 }
 
 .topbar .navbar-search {
-  width: 50rem;
+  width: auto;
 }
 
 .topbar .navbar-search input {
