@@ -56,11 +56,11 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control form-control-user" name="managerId"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Id">
+                                                placeholder="Enter Id" value="admin">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" name="managerPw"
-                                                id="exampleInputPassword" placeholder="Password">
+                                                id="exampleInputPassword" placeholder="Password" value="1234">
                                         </div>
                                  
                                         <button type="submit" class="btn btn-primary btn-user btn-block">

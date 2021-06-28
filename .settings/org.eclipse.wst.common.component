@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
     <wb-module deploy-name="mall_admin">
+                
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+                
         <dependent-module archiveName="cos.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/cos/cos">
+                        
             <dependency-type>uses</dependency-type>
+                    
         </dependent-module>
-        <dependent-module archiveName="mariadb-java-client-2.6.2.jar" deploy-path="/WEB-INF/lib/" handle="module:/resource/mariadb-java-client-2.6.2/mariadb-java-client-2.6.2">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
+                
         <property name="context-root" value="mall_admin"/>
+                
         <property name="java-output-path" value="/mall_admin/build/classes"/>
+            
     </wb-module>
+    
 </project-modules>

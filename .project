@@ -4,7 +4,6 @@
 	<comment></comment>
 	<projects>
 		<project>cos</project>
-		<project>mariadb-java-client-2.6.2</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
